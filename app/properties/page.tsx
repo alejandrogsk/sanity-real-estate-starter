@@ -30,8 +30,6 @@ async function getData({operation}:FilterOptions):Promise<Property[]|null>{
 
 
 export default async function Page({searchParams}:{searchParams: { [key: string]: string | string[] | undefined }}) {
-
-  console.log('Search Params: ', searchParams)
   const { operation } = searchParams;
   const properties = await getData({operation})
   

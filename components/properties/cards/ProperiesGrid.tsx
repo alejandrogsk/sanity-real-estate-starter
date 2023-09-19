@@ -11,11 +11,11 @@ const ProperiesGrid = ({properties, title}:{properties: Property[], title?: stri
         {
           (Array.isArray(properties) && properties.length > 0) ?
 
-        <div className='grid grid-cols-1 md:grid-cols-3 gap-4 w-full'>
+        <ul className='grid grid-cols-1 md:grid-cols-3 gap-4 w-full'>
         {
           properties.map((element:Property) => <PropertyCard property={element} />)
         }
-    </div> : <p>Sorry, no result can be found</p>
+    </ul> : <p>Sorry, no result can be found</p>
         }
     </div>
   )

@@ -5,7 +5,7 @@ import Link from "next/link"
 
 const PropertyCard = ({property}: {property:Property}) => {
     return(
-      <div className='bg-white relative  w-full flex flex-col'>
+      <li className='bg-white relative  w-full flex flex-col'>
       <Link aria-label="go to the page" href={`/properties/${property.slug}`} className='absolute top-0 left-0 right-0 bottom-0 cursor-pointer'></Link>
     {
       property?.featuredImage &&
@@ -18,7 +18,7 @@ const PropertyCard = ({property}: {property:Property}) => {
       <div className='py-4 flex justify-center gap-2 border-gray-200 border-x-[1px]'><Image src="/icons/Shower.svg" alt='Bed icon' width={16} height={16} /> <span>{property?.bathrooms}</span></div>
       <div className='py-4 flex gap-2 justify-self-end'><Image src="/icons/Size.svg" alt='Bed icon' width={16} height={16} /> <span>{property?.squareFeet}ft2</span></div>
     </div>
-  </div>
+  </li>
   )
   }
 
