@@ -16,9 +16,7 @@ const TwoColumnsCard = ({feature, reverse=false}: {feature: HomePageFeature, rev
         width={500}
         height={500}
         className={clsx({
-          "w-full h-full ": true,
-          "rounded-tr-0 md:rounded-tr-[5rem]": !reverse,
-          "rounded-tl-0 md:rounded-tl-[5rem]": reverse
+          "w-full h-full ": true
         })}
       />
     </div>
@@ -32,7 +30,7 @@ const TwoColumnsCard = ({feature, reverse=false}: {feature: HomePageFeature, rev
        <div className='flex mt-12'>
         {
           feature.links.map((link) => (
-            <button key={link._key} className='py-3 px-6 bg-black text-white rounded-tr-[1rem]'>{link.linkLabel}</button>
+            <button key={link._key} className='py-3 px-6 bg-black text-white'>{link.linkLabel}</button>
           ))
         }
        </div>

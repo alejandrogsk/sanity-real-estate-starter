@@ -14,7 +14,7 @@ const OneColumCard = ({feature}: {feature: HomePageFeature}) => {
              <div className='flex mt-12'>
               {
                 feature.links.map((link) => (
-                  <button key={link._key} className='py-3 px-6 bg-white text-black rounded-tr-[1rem]'>{link.linkLabel}</button>
+                  <button key={link._key} className='py-3 px-6 bg-white text-black'>{link.linkLabel}</button>
                 ))
               }
              </div>

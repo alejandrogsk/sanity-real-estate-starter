@@ -12,8 +12,9 @@ const PropertyImages = ({featuredImage, images, title}: {featuredImage: Featured
                             src={builder.image(asset._ref).url()}
                             alt={alt}
                             width={1500}
-                            height={1100}
-                            className="w-full h-auto rounded-tr-0 md:rounded-tr-[5rem]"
+                            height={1100
+                            }
+                            className="w-full h-auto "
                         />
 
                         {
@@ -26,7 +27,7 @@ const PropertyImages = ({featuredImage, images, title}: {featuredImage: Featured
                                     height={120}
                                     src={builder.image(imag.asset._ref).url()}
                                     alt={`${title} image n° ${i}`}
-                                    className="rounded-tr-0 md:rounded-tr-[1.5rem]"
+                                    className=""
                                 />)
                             })}
                         </div>

@@ -8,8 +8,8 @@ const RealtorCard = ({ realtor }: { realtor: Realtor }) => {
     const { name, lastName, profileImage } = realtor;
 
     return (
-        <div className="bg-white shadow py-12 px-8 rounded-[1.5rem] flex flex-col gap-4 relative top-0 lg:sticky lg:top-[6rem]">
-            <div className="flex items-center gap-3 bg-gray-dark p-3 rounded-[1rem]">
+        <div className="bg-white shadow py-12 px-8  flex flex-col gap-4 relative top-0 lg:sticky lg:top-[6rem]">
+            <div className="flex items-center gap-3 bg-gray-dark p-3 ">
                 <Image
                     src={builder.image(profileImage._ref).url()}
                     alt={`${name} ${lastName} profile image`}
@@ -24,14 +24,14 @@ const RealtorCard = ({ realtor }: { realtor: Realtor }) => {
             </div>
 
             <form className="w-full flex flex-col gap-2">
-                <input name="clientName" placeholder="Name" className="  h-[2.5rem] px-2 placeholder:text-black outline-none border-[1px] rounded-[1rem] text-sm" />
-                <input name="clientPhone" placeholder="Phone" className="h-[2.5rem] px-2 placeholder:text-black outline-none border-[1px] rounded-[1rem] text-sm"/>
-                <input name="clientEmail" placeholder="Email" className="h-[2.5rem] px-2 placeholder:text-black outline-none border-[1px] rounded-[1rem] text-sm"/>
+                <input name="clientName" placeholder="Name" className="form-input" />
+                <input name="clientPhone" placeholder="Phone" className="form-input"/>
+                <input name="clientEmail" placeholder="Email" className="form-input"/>
                 <textarea name="clientMessage" placeholder="Hello, I'm interested in..."
-                className="min-h-[2.5rem] p-2 placeholder:text-black outline-none border-[1px] rounded-[1rem] text-sm"
+                className="form-textarea"
                 />
 
-                <button className="rounded-tr-[1rem] text-lg font-semibold bg-black hover:bg-primary-main transition-all text-white w-full min-h-[3rem] lg:min-h-[3.5rem] mt-3">
+                <button className=" text-lg font-semibold bg-black hover:bg-primary-main transition-all text-white w-full min-h-[3rem] lg:min-h-[3.5rem] mt-3">
                     Submit Message
                 </button>
             </form>

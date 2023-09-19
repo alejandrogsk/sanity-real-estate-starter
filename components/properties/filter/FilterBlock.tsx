@@ -9,8 +9,12 @@ const FilterBlock = ({label, valueToFind, options }:{label:string, valueToFind:s
     const values = searchParams.getAll(valueToFind)
     return (
         <div>
-            <h3 className='text-lg mb-2'>{label}:</h3>
+            <h3 className='text-lg mb-4'>{label}:</h3>
+
             {
+                (Array.isArray(options) && options.length > 0) &&
+                <div className='flex xl:flex-col gap-1'>
+                    {
                 options.map((opt: Option, i) => {
                     const isChecked = values.includes(opt.id);
                     return (
@@ -24,6 +28,9 @@ const FilterBlock = ({label, valueToFind, options }:{label:string, valueToFind:s
                     )
                 })
             }
+                </div>
+            }
+            
         </div>
     )
 }

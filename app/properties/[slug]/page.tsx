@@ -2,7 +2,7 @@ import { getPropertyBySlug } from "@/sanity/sanity-utils";
 import React from "react";
 import priceFormat from "@/utils/currencyFormat";
 import RealtorCard from "@/components/properties/RealtorCard";
-import ProperiesGrid from "@/components/ProperiesGrid";
+import ProperiesGrid from "@/components/properties/cards/ProperiesGrid";
 import PropertyImages from "@/components/properties/PropertyImages";
 import PropertyDetails from "@/components/properties/PropertyDetails";
 import PropertyDescription from "@/components/properties/PropertyDescription";

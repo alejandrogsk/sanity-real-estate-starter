@@ -13,6 +13,7 @@ const FilterInputCkeckbox = ({ queryTypeName, queryTypeValue,queryTypeLabel, ini
     const searchParams = useSearchParams();
     const router = useRouter();
     const pathname = usePathname();
+    
     const handleCheckboxChange = (e:ChangeEvent<HTMLInputElement>) => {
         setIsChecked(!isChecked); // Toggle the checked state
         const catValue = formatId(e.target.value)
@@ -32,8 +33,9 @@ const FilterInputCkeckbox = ({ queryTypeName, queryTypeValue,queryTypeLabel, ini
             }
         }
     };
+
     return (
-        <div className='flex gap-2'>      
+        <label  htmlFor={queryTypeValue} className='flex items-center gap-2'>      
             <input
                 type="checkbox"
                 id={queryTypeValue}
@@ -41,9 +43,10 @@ const FilterInputCkeckbox = ({ queryTypeName, queryTypeValue,queryTypeLabel, ini
                 value={queryTypeValue}
                 checked={isChecked}
                 onChange={handleCheckboxChange}
+                className='form-checkbox'
             />
-             <label htmlFor={queryTypeValue} className='text-sm'>{queryTypeLabel}</label>
-        </div>
+             <span className='text-sm'>{queryTypeLabel}</span>
+        </label>
     )
 }
 

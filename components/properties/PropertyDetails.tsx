@@ -7,7 +7,7 @@ type PropertyDetailsProps = {
 
 const PropertyDetails = ({bedrooms, bathrooms, squareFeet, garages, yearOfConstruction}:PropertyDetailsProps) => {
   return (
-    <div className="bg-white py-12 px-8 rounded-[2.5rem]">
+    <div className="bg-white py-12 px-8">
                         <h2 className="text-xl font-medium">Details</h2>
                         <div className="text-sm grid grid-cols-2 md:grid-cols-5 gap-2 pt-6 mt-2 border-t-[1px] border-gray-200">
                             <div className="py-4 flex justify-center gap-2">

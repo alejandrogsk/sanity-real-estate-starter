@@ -1,5 +1,5 @@
-import ProperiesGrid from '@/components/ProperiesGrid';
-import Filter from '@/components/properties/Filter';
+import ProperiesGrid from '@/components/properties/cards/ProperiesGrid';
+import Filter from '@/components/properties/filter/Filter';
 import { getProperties } from '@/sanity/sanity-utils';
 import { Property } from '@/types/Property';
 import filterOperations from '@/utils/filterFunction';
@@ -10,7 +10,6 @@ type FilterOptions = {
 }
 
 async function getData({operation}:FilterOptions):Promise<Property[]|null>{
-  console.log('My Operations: ', operation)
   /*
     Example
     Operation = ['forRent', 'forSale']
@@ -23,9 +22,7 @@ async function getData({operation}:FilterOptions):Promise<Property[]|null>{
     I need to pass this to my query
   */
   const opFilterString = filterOperations(operation)
-  console.log('opFilterString: ', opFilterString)
   const properties = await getProperties(opFilterString)
-
   return properties
 }
 
@@ -47,7 +44,7 @@ export default async function Page({searchParams}:{searchParams: { [key: string]
           <div className='px-8 py-12 bg-gray-700 flex items-end h-[16.5rem] lg:h-[28rem]'>
             <h1 className='text-white text-3xl font-semibold'>Find your dream home</h1>
           </div>
-
+          <div className='xl:hidden'><Filter /></div>
           {
             (Array.isArray(properties) && properties.length>=1)&&
             <ProperiesGrid  properties={properties} />

@@ -5,7 +5,7 @@ import { HomePage, HomePageFeature } from '@/types/HomePage';
 import TwoColumnsCard from '@/components/TwoColumnsCard';
 import imageUrlBuilder from '@sanity/image-url'
 import OneColumCard from '@/components/OneColumCard';
-import ProperiesGrid from '@/components/ProperiesGrid';
+import ProperiesGrid from '@/components/properties/cards/ProperiesGrid';
 const builder = imageUrlBuilder(clientConfig)
 
 type SEO = {
