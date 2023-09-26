@@ -92,7 +92,7 @@ export async function getPageBySlug<T>(slug:string): Promise<T> {
           title,
           "slug": slug.current,
           "featuredImage": featuredImage.asset,
-          bedroom,
+          bedrooms,
           bathrooms,
           squareFeet
         }

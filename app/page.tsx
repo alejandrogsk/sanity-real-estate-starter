@@ -14,23 +14,16 @@ type SEO = {
 }
 
 export async function generateMetadata() {
-  const metadata = await getPageMetadataBySlug<{seo:SEO}>("beautiful-homes-made-for-you")
+  const metadata = await getPageMetadataBySlug<{seo:SEO}>("homepage")
   const { seoTitle, seoDescription } = metadata.seo;  
   return {
-    title: seoTitle,
-    description: seoDescription
+    title: seoTitle ?? 'Homepage',
+    description: seoDescription ?? 'Homepage'
   }
 }
 export default async function Home() {
-
-  //const data = await getProperties();
-  const page = await getPageBySlug<HomePage>("beautiful-homes-made-for-you");
-
+  const page = await getPageBySlug<HomePage>("homepage");
   const { title, subtitle, featuredImage, features, featuredProperties  } = page;
-  
-  //Fetch Properties
-  //console.log("featuredProperties", featuredProperties)
-
   const firstElement:HomePageFeature|null = features.shift() ?? null
 
   return (
@@ -42,9 +35,9 @@ export default async function Home() {
       style={{
         backgroundImage: `linear-gradient(108deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 100%), url(${builder.image(featuredImage.asset._ref).url()})`
       }}>
-        <div className='w-full md:w-1/2 text-white mx-2 md:mx-8'>
-        <h1 className='text-4xl font-medium uppercase'>{title}</h1>
-        <p className='mt-6'>{subtitle}</p>
+        <div className='w-full md:w-[80%] lg:w-[70%] text-white mx-2 md:mx-8 backdrop-blur-none	 md:backdrop-blur-sm	p-12'>
+          <h1 className='text-2xl md:text-3xl lg:text-5xl font-medium uppercase'>{title}</h1>
+          <p className='mt-6 text-base w-full md:w-[70%]'>{subtitle}</p>
         </div>
       </div>
 

@@ -23,11 +23,11 @@ const Header = () => {
       </Link>
 
 
-      <ul className='hidden md:flex items-center gap-2 text-white'>
+      <ul className='hidden md:flex items-center gap-6 text-white text-base uppercase'>
         <li className='cursor-pointer'><Link href='/'>Home</Link></li>
         <li className='cursor-pointer'><Link href='/properties'>Properties</Link></li>
         <li className='cursor-pointer'>About</li>
-        <button className='py-2 px-4 bg-primary-main text-black'>Contact Us</button>
+        <button className='py-2 px-4 bg-primary-main text-black text-base uppercase'>Contact Us</button>
       </ul>
 
       <span aria-label='Open mobile menu' className='cursor-pointer flex md:hidden' onClick={()=>setIsOpen(!isOpen)}>
@@ -44,7 +44,7 @@ const Header = () => {
      <span aria-label='Close mobile menu' className='cursor-pointer absolute top-[2rem] right-[.5rem] flex md:hidden ' onClick={()=>setIsOpen(!isOpen)}>
         <Image src='/icons/Close.svg' alt='Your real estate company logo' width={30} height={30} />
       </span>
-  <ul className='h-full flex flex-col justify-center items-center gap-2 text-black text-xl'>
+  <ul className='h-full flex flex-col justify-center items-center gap-6 text-black text-xl uppercase'>
         <li className='cursor-pointer'><Link href='/'>Home</Link></li>
         <li className='cursor-pointer'><Link href='/properties'>Properties</Link></li>
         <li className='cursor-pointer'>About</li>
