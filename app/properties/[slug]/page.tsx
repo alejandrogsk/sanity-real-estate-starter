@@ -30,7 +30,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
     } = data;
     return (
         <main >
-            <div className="flex flex-col md:flex-row justify-between pt-28 pb-12 bg-black text-white px-2 md:px-8">
+            <div className="flex flex-col md:flex-row justify-between pt-28 lg:pt-36 pb-12 bg-black text-white px-2 md:px-8">
                 <div>
                     <h1 className="text-3xl font-semibold">{title}</h1>
                     <span className="text-base text-gray-400">{address}</span>

@@ -21,7 +21,10 @@ const PropertyImages = ({featuredImage, images, title}: {featuredImage: Featured
 		});
 	}
 
-    const fsImages = Array.isArray(images) ? images?.map((imag) => builder.image(imag.asset._ref).url()) : []
+    
+    const fsImages = Array.isArray(images) ? images?.map((imag:SanityImageType) => {
+        if(imag.asset?._ref) return builder.image(imag.asset._ref).url()
+    }) : []
     fsImages.unshift(builder.image(asset._ref).url())
     return (
     <div className=''>
@@ -29,13 +32,14 @@ const PropertyImages = ({featuredImage, images, title}: {featuredImage: Featured
 				toggler={lightboxController.toggler}
 				sources={fsImages}
 				slide={lightboxController.slide}
+                type="image"
 			/>
             <Image
                 src={builder.image(asset._ref).url()}
                 alt={alt}
                 width={1500}
                 height={1100}
-                className="w-full h-auto "
+                className="w-full h-auto cursor-pointer"
                 onClick={()=>openLightboxOnSlide(1)}
             />
                         
@@ -50,7 +54,7 @@ const PropertyImages = ({featuredImage, images, title}: {featuredImage: Featured
                                     height={120}
                                     src={builder.image(imag.asset._ref).url()}
                                     alt={`${title} image n° ${i}`}
-                                    className=""
+                                    className="cursor-pointer"
                                     key={`${title}-image-n°-${i}`}
                                     onClick={()=>openLightboxOnSlide(i+2)}
                                 />)

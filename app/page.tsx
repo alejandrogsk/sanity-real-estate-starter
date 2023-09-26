@@ -1,5 +1,4 @@
-import { getPageBySlug, getPageMetadataBySlug, getProperties } from '@/sanity/sanity-utils'
-import Image from 'next/image'
+import { getPageBySlug, getPageMetadataBySlug } from '@/sanity/sanity-utils'
 import clientConfig from '@/sanity/config/client-config';
 import { HomePage, HomePageFeature } from '@/types/HomePage';
 import TwoColumnsCard from '@/components/TwoColumnsCard';
@@ -29,7 +28,7 @@ export default async function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between ">
 
-      {/**Hero */}
+      {/**Hero banner */}
       <div 
       className='h-screen w-full bg-cover bg-no-repeat bg-center flex flex-col justify-center ' 
       style={{
